@@ -12,6 +12,36 @@ void swap(int *a, int *b) {
   *b = temp;
 }
 
+void max() {
+  if(arr == NULL || size == 0){
+    printf("There's no array available.\n");
+    return;
+  }
+  int max = arr[0];
+
+  for (int i = 0 ; i <= size - 1 ; i++){
+    if(arr[i] > max){
+      max = arr[i];
+    }
+  }
+  printf("The maximum value in the array is: %d\n", max);
+}
+
+void min() {
+    if(arr == NULL || size == 0){
+    printf("There's no array available.\n");
+    return;
+  }
+  int min = arr[0];
+
+  for (int i = 0 ; i <= size - 1 ; i++){
+    if (arr[i] < min){
+      min = arr[i];
+    }
+
+  }
+  printf("The minimum value is: %d\n", min);
+}
 int partition(int arr[], int low, int high) {
   int pivot = arr[high];
   int i = low - 1;
@@ -154,6 +184,8 @@ int main() {
     printf("d: Delete an element of the array\n");
     printf("r: resizes the array\n");
     printf("p: prints the array\n");
+    printf("x: prints the maximum value in the array\n");
+    printf("z: prints the minimum value in the array\n");
     printf("q: quit\n");
     printf("Write: ");
     scanf("%s", &action);
@@ -185,6 +217,14 @@ int main() {
     else if(strcmp(action, "p") == 0){
       system("clear");
       printArray();
+    }
+    else if(strcmp(action, "x") == 0){
+      system("clear");
+      max();
+    }
+    else if(strcmp(action, "z") == 0){
+      system("clear");
+      min();
     }
     else if (strcmp(action, "q") == 0){
       system("clear");
